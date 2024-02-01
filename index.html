@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple City Info Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        select, .city-info {
+            margin-top: 20px;
+            padding: 10px;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the City Information Page</h1>
+
+    <select id="cityDropdown" onchange="showCityInfo()">
+        <option value="">Select a City</option>
+        <option value="montreal">Montreal</option>
+        <option value="toronto">Toronto</option>
+        <!-- Add more cities here -->
+    </select>
+
+    <div class="city-info" id="cityInfo">
+        <!-- City information will be displayed here -->
+    </div>
+
+    <script>
+        function showCityInfo() {
+            var city = document.getElementById('cityDropdown').value;
+            var cityInfoDiv = document.getElementById('cityInfo');
+            
+            if(city === "montreal") {
+                cityInfoDiv.innerHTML = "<h2>Montreal</h2><p>Montreal is the largest city in Canada's Québec province.</p>";
+            } else if(city === "toronto") {
+                cityInfoDiv.innerHTML = "<h2>Toronto</h2><p>Toronto is the capital city of the Canadian province of Ontario.</p>";
+            } else {
+                cityInfoDiv.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>
